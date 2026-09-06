@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="projects.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Racing+Sans+One&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>My Projects</title>
     <style>
@@ -37,50 +38,51 @@
         }
 
         /* --- Navigation --- */
+        header { 
+            display: flex; 
+            align-items: center; 
+            padding: 0 50px; 
+            height: 80px; 
+            background: rgba(0, 0, 0, 0.6); 
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #00A19B;
+            position: relative; 
+            z-index: 10;
+        }
+            
+        .logo { 
+             color: #00A19B; 
+             font-size: 1.5rem; 
+             font-family: 'JetBrains Mono', monospace; 
+             font-weight: bold; 
+             text-decoration: none; 
+             background: none;
+             border: none;
+             cursor: pointer;
+             letter-spacing: 2px;
+             position: absolute; 
+             left: 50px; 
+        }
+
         nav {
-            width: 100%;
-            padding: 1rem 5%;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(15px);
-            border-bottom: 2px solid #00A19B; /* Teal border */
-            margin-bottom: 2rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
-            flex-wrap: wrap ;
-            align-items: center;
-            justify-content: center;
-            position:relative;
+            gap: 30px;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #00A19B; /* Petronas Teal */
-            letter-spacing: 1px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            position: absolute; /* Added */
-            left: 5%;
+        nav a { 
+            color: #cccccc; 
+            text-decoration: none; 
+            font-size: 1.1rem; 
+            font-family: 'JetBrains Mono', monospace;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
-        .navlinks {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .navlinks li a {
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: #cccccc;
-            transition: 0.3s ease;
-            text-decoration: none;
-        }
-
-        .navlinks li a:hover {
+        nav a:hover { 
             color: #ffffff;
-            /* Your requested blue glow */
-            text-shadow: 0 0 10px #0271c1, 0 0 20px #0271c1; 
+            text-shadow: 0 0 10px #00A19B, 0 0 20px #00A19B; 
         }
 
         .btn {
@@ -104,9 +106,11 @@
         .Projects-title {
             text-align: center;
             font-size: 45px;
-            margin: 20px 0 35px 0;
+            margin: 40px 0 35px 0;
             color: #00A19B;
+            font-family: 'Orbitron', sans-serif; 
             font-weight: 700;
+            letter-spacing: 3px;
         }
 
         main {
@@ -163,7 +167,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Update these with your own images later */
         .flip-card-front { background: url('lexach.png') center/cover no-repeat; }
         .flip-card-front2 { background: url('MC.jpeg') center/cover no-repeat; }
         .flip-card-front3 { background: url('MU.jpeg') center/cover no-repeat; }
@@ -171,7 +174,7 @@
         .flip-card-front5 { background: url('BLR.jpeg') center/cover no-repeat; }
         
         .flip-card-back {
-            background: rgba(15, 15, 15, 0.85); /* Sleek dark glass back */
+            background: rgba(15, 15, 15, 0.85); 
             backdrop-filter: blur(10px);
             border: 2px solid #00A19B;
             color: #ffffff;
@@ -214,14 +217,12 @@
     <div class="bg-image"></div>
 
     <header>
+        <button class="logo" onclick="window.location.href='personal_site.html'">Mokii.dev</button>
         <nav>
-            <button class="logo" onclick="window.location.href='index.html'">My Site</button>
-            <ul class="navlinks">
-                <li><a href="about.html">About</a></li> 
-                <li><a href="hobbies.html">Hobbies</a></li> 
-                <li><a href="projects.html">Projects</a></li> 
-                <li><a href="https://stardance.hackclub.com/@amateur_tech_guy" target="_blank">Profile</a></li> 
-            </ul>
+            <a href="about.html">About</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="projects.html">Projects</a>
+            <a href="https://stardance.hackclub.com/@IcedThrower_95/projects" target="_blank">Profile</a>
         </nav> 
     </header>
 
@@ -269,6 +270,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front5"></div>
