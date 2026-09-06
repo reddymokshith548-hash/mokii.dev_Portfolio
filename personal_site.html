@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Site</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Courier New', Courier, monospace; 
+        }
+
+        /* --- Background (Unblurred) --- */
+        .bg-image {
+            position: fixed;
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh;
+            background-image: url('f1-car.jpg'); /* Make sure your image is named this */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: brightness(0.8); /* Slightly darkened for text readability */
+        }
+
+        body { 
+            color: #ffffff; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+            overflow-x: hidden;
+        }
+        
+        /* --- Navigation --- */
+        header { 
+            display: flex; 
+            align-items: center; 
+            padding: 20px 50px; 
+            background: rgba(0, 0, 0, 0.6); 
+            position: relative; 
+        }
+        
+        .logo { 
+            color: #0271c1; 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            text-decoration: none; 
+        }
+        
+        nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav a { 
+            color: #cccccc; 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-size: 1.1rem; 
+            transition: color 0.3s ease, text-shadow 0.3s ease; 
+        }
+        
+        nav a:hover { color: #ffffff;
+                      text-shadow: 0 0 10px #0271c1, 0 0 20px #0271c1;
+        }
+
+        .layout-container {
+            flex: 1;
+            display: flex;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .glass-panel {
+            width: 45%; /* Keeps it strictly on the left side */
+            min-height: 85vh; /* Extends it downwards into a tall rectangle */
+            background: rgba(15, 15, 15, 0.65); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        h1 { font-size: 2.2rem; margin-bottom: 15px; color: ; }
+        p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; color: #eeeeee; }
+        
+        footer { 
+            text-align: center; 
+            padding: 20px; 
+            background: rgba(0, 0, 0, 0.7);
+            font-size: 0.9rem; 
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unblurred Background Image -->
+    <div class="bg-image"></div>
+
+    <header>
+        <a href="index.html" class="logo">My Site</a>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="projects.html">Projects</a>
+            <a href="https://stardance.hackclub.com/@IcedThrower_95/projects">Profile</a>
+        </nav>
+    </header>
+
+    <!-- Content Layout -->
+    <div class="layout-container">
+        <!-- Single Left Panel -->
+        <main class="glass-panel">
+            <h1>I am Mokshihth Reddy</h1>
+            <p>Welcome.I am an aspiring Mechatronics and Robotics Engineer with a strong foundation in AI development, hardware integration, and startup innovation.</p>
+            <p>My work centers on bridging logic flow design with tangible hardware and intelligent algorithms to build impactful technology.</p><br>
+            <p>Beyond academics and engineering, I am an avid follower of Formula 1 racing, I also dedicate time to Cycling and also practicing my racing skills on a racing simulator.
+        </main>
+    </div>
+
+    <footer>
+        &copy; Built on my own terms.
+    </footer>
+
+</body>
+</html>
