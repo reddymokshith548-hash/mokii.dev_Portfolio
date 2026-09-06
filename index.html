@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokii | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'JetBrains Mono', monospace; 
+        }
+
+        /* --- Full Screen F1 Background --- */
+        .bg-image {
+            position: fixed;
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh;
+            background-image: url('img/f1-car.jpg'); 
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: brightness(0.6); /* Slightly darker so the white text pops */
+        }
+
+        body { 
+            color: #ffffff; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+            overflow: hidden; /* Prevents scrolling on the entrance page */
+        }
+        
+        /* --- Navigation --- */
+        header { 
+            display: flex; 
+            align-items: center; 
+            padding: 20px 50px; 
+            background: transparent; /* Removed the dark bar for a cleaner entrance */
+            position: relative; 
+            z-index: 10;
+        }
+        
+        .logo { 
+            color: #00A19B; 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            text-decoration: none; 
+            background: none;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 2px;
+        }
+        
+        nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav a { 
+            color: #cccccc; 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-size: 1.1rem; 
+            transition: color 0.3s ease, text-shadow 0.3s ease; 
+        }
+        
+        nav a:hover { 
+            color: #ffffff;
+            text-shadow: 0 0 10px #00A19B, 0 0 20px #00A19B; /* Petronas Teal Glow */
+        }
+
+        /* --- Hero Entrance Section --- */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding-left: 15%;
+            z-index: 5;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero-title .accent {
+            color: #00A19B;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #cccccc;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        /* --- Call to Action Buttons --- */
+        .btn-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Solid Teal Button */
+        .btn-primary {
+            background-color: #00A19B;
+            color: #000000;
+            border: 2px solid #00A19B;
+            box-shadow: 0 0 15px rgba(0, 161, 155, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: #00A19B;
+            box-shadow: 0 0 25px rgba(0, 161, 155, 0.8);
+        }
+
+        /* Hollow Glass Button */
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-secondary:hover {
+            border-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 20px; 
+            font-size: 0.9rem; 
+            color: rgba(255, 255, 255, 0.4);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image"></div>
+
+    <header>
+        <button class="logo" onclick="window.location.href='index.html'">Mokii.dev</button>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="projects.html">Projects</a>
+            <a href="https://stardance.hackclub.com/@IcedThrower_95/projects" target="_blank">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="hero-title">Mokshith <span class="accent">Reddy</span></h1>
+        <h2 class="hero-subtitle">Mechatronics | AI Development | Startup Innovation</h2>
+        
+        <div class="btn-container">
+            <a href="projects.html" class="btn-primary">View Projects</a>
+            <a href="about.html" class="btn-secondary">Get To Know Me</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Built on my own terms.
+    </footer>
+
+</body>
+</html>
