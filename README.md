@@ -4,7 +4,7 @@ Hello! My name is Mokshith Reddy, and if you're reading this: Welcome to my webs
 This website is a custom-built digital portfolio featuring an F1-inspired aesthetic, designed to introduce myself, share my interests in hardware and motorsport, and showcase my projects.
 How does it work?
 
-Click on this link to be redirected to my website: [Mokii.dev](https://reddymokshith548-hash.github.io/personal_site_mokii/)
+Click on this link to be redirected to my website: [Mokii.dev](https://reddymokshith548-hash.github.io/mokii.dev_Portfolio/))
 
 And now let's start exploring page by page!
 
