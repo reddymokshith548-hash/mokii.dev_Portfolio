@@ -1,194 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mokii | Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'JetBrains Mono', monospace; 
-        }
-
-        /* --- Full Screen F1 Background --- */
-        .bg-image {
-            position: fixed;
-            top: 0; 
-            left: 0; 
-            width: 100vw; 
-            height: 100vh;
-            background-image: url('img/f1-car.jpg'); 
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-            filter: brightness(0.6); /* Slightly darker so the white text pops */
-        }
-
-        body { 
-            color: #ffffff; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
-            overflow: hidden; /* Prevents scrolling on the entrance page */
-        }
-        
-        /* --- Navigation --- */
-        header { 
-            display: flex; 
-            align-items: center; 
-            padding: 20px 50px; 
-            background: transparent; /* Removed the dark bar for a cleaner entrance */
-            position: relative; 
-            z-index: 10;
-        }
-        
-        .logo { 
-            color: #00A19B; 
-            font-size: 1.5rem; 
-            font-weight: bold; 
-            text-decoration: none; 
-            background: none;
-            border: none;
-            cursor: pointer;
-            letter-spacing: 2px;
-        }
-        
-        nav {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        nav a { 
-            color: #cccccc; 
-            text-decoration: none; 
-            margin: 0 15px; 
-            font-size: 1.1rem; 
-            transition: color 0.3s ease, text-shadow 0.3s ease; 
-        }
-        
-        nav a:hover { 
-            color: #ffffff;
-            text-shadow: 0 0 10px #00A19B, 0 0 20px #00A19B; /* Petronas Teal Glow */
-        }
-
-        /* --- Hero Entrance Section --- */
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            text-align: left;
-            padding-left: 15%;
-            z-index: 5;
-        }
-
-        .hero-title {
-            font-size: 4.5rem;
-            font-weight: 800;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .hero-title .accent {
-            color: #00A19B;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: #cccccc;
-            margin-bottom: 40px;
-            letter-spacing: 1px;
-            font-weight: 300;
-        }
-
-        /* --- Call to Action Buttons --- */
-        .btn-container {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 15px 35px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Solid Teal Button */
-        .btn-primary {
-            background-color: #00A19B;
-            color: #000000;
-            border: 2px solid #00A19B;
-            box-shadow: 0 0 15px rgba(0, 161, 155, 0.4);
-        }
-
-        .btn-primary:hover {
-            background-color: transparent;
-            color: #00A19B;
-            box-shadow: 0 0 25px rgba(0, 161, 155, 0.8);
-        }
-
-        /* Hollow Glass Button */
-        .btn-secondary {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-        }
-
-        .btn-secondary:hover {
-            border-color: #ffffff;
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        footer { 
-            text-align: center; 
-            padding: 20px; 
-            font-size: 0.9rem; 
-            color: rgba(255, 255, 255, 0.4);
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+<meta charset=UTF-8>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mokii — Imagine. Build. Create.</title>
+<meta name=description content="Mokii — AS/A Level student, AI developer, startup founder and builder.">
+<link href="https://fonts.googleapis.com" rel=preconnect>
+<link href='https://fonts.gstatic.com' rel=preconnect crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
+<link href=index.css rel=stylesheet>
 </head>
 <body>
 
-    <div class="bg-image"></div>
+<div class="global-wallpaper"></div>
 
-    <header>
-        <button class="logo" onclick="window.location.href='index.html'">Mokii.dev</button>
-        <nav>
-            <a href="about.html">About</a>
-            <a href="hobbies.html">Hobbies</a>
-            <a href="projects.html">Projects</a>
-            <a href="https://stardance.hackclub.com/@IcedThrower_95/projects" target="_blank">Profile</a>
-        </nav>
-    </header>
+<DIV class=loader>
+  <div class='loader-inner'>
+    <div class="loader-top">
+      <span id=loaderPercent>00%</span>
+    </div>
+    <div class=loader-title><span>MOKII</span></div>
+    <div class="loader-line"><div class='loader-line-inner'></div></div>
+  </div>
+</DIV>
 
-    <main>
-        <h1 class="hero-title">Mokshith <span class="accent">Reddy</span></h1>
-        <h2 class="hero-subtitle">Mechatronics | AI Development | Startup Innovation</h2>
-        
-        <div class="btn-container">
-            <a href="projects.html" class="btn-primary">View Projects</a>
-            <a href="about.html" class="btn-secondary">Get To Know Me</a>
-        </div>
-    </main>
+<div class=cursor></div>
 
-    <footer>
-        &copy; Built on my own terms.
-    </footer>
+<header class="top-nav">
+  <button class=logo onclick="window.location.href='index.html'">Mokii.dev</button>
+  <nav>
+    <A href='about.html'>About</A>
+    <a href="projects.html">Projects</a>
+    <a href=hobbies.html>Hobbies</a>
+    <a target=_blank rel=noopener href="https://stardance.hackclub.com/@IcedThrower_95/projects">Stardance</a>
+    <a target=_blank rel=noopener class='final-link' href="https://www.instagram.com/cosmic.mokshith_404/">The.Gram</a>
+    <a target=_blank rel=noopener class='final-link' href="https://www.linkedin.com/in/pondugula-mokshith-reddy-5842a437b">Linkdin</a>
+    <A target=_blank rel=noopener class='final-link' href="reddymokshith548@gmail.com">Connect.Email</A>
+  </nav>    
+</header>
 
+<section class=hero>
+  <div class=hero-grid></div>
+  <div class="hero-content">
+    <div class=hero-kicker><span>Engineering· Startups · AI </span></div>
+    <h1 class='hero-title'>
+      <span class="hero-title-line">MOKSHITH</span>
+      <span class="hero-title-line"><span class=teal>REDDY</span></span>
+    </h1>
+    <div class="hero-bottom">
+      <p class='hero-description'>I build things where software stops being just code — AI systems, robotics, startups and technology designed to actually do something in the real world.
+    </div>
+  </div>
+</section>
+
+<section class=building>
+  <div class="building-header">
+    <div class="building-title">What's on my desk</div>
+  </div>
+  <div class='status-card'>
+    <div class="terminal-bar">
+      <div class=terminal-dot1></div>
+      <div class=terminal-dot2></div>
+      <div class=terminal-dot3></div>
+      <div class="terminal-name">mokii@workspace — active-development</div>
+    </div>
+    <div class=terminal-body>
+      <div class='terminal-line'>
+        <span class=terminal-prefix>$</span><span>current_projects</span>
+      </div>
+      <div class="terminal-line">
+        <span class="terminal-prefix">→</span><span class='terminal-highlight'>Lexach</span>
+      </div>
+      <div class='terminal-line'>
+        <span class=terminal-prefix>→</span><span class="terminal-highlight">Lexi OS - Custom Web Operating System</span>
+      </div>
+      <div class="status-progress"><div class='status-progress-inner'></div></div>
+    </div>
+  </div>
+  <div class=building-items>
+    <div class="build-item">
+      <h3>Lexach</h3>
+      <p style="color: #000000; font-size: 16px; font-weight: bold;">Building an AI-driven platform designed to connect entrepreneurs with compatible founders, mentors and investors. Currently researching and building the algorithm.</p>
+    </div>
+    <div class='build-item'>
+      <h3>Lexi OS</h3>
+     <p style="color: #000000; font-size: 16px; font-weight: bold;">Developing my very own OS that can be run in the web!.
+    </div>
+  </div>
+</section>
+
+<section class=final>
+  <div class='final-title'>LET'S<br>BUILD<br><span>WHAT'S NEXT</span></div>
+  <div class=final-middle>
+    <div class='final-links'>
+      <A class=final-link href="projects.html">Projects</A>
+      <a class="final-link" href='about.html'>About</a>
+      <a class=final-link href="hobbies.html">Hobbies</a>
+      <a class='final-link' href="https://stardance.hackclub.com/@IcedThrower_95/projects">Stardance</a>
+      <a class='final-link' href="https://www.instagram.com/cosmic.mokshith_404/">The.Gram</a>
+      <a class='final-link' href="https://www.linkedin.com/in/pondugula-mokshith-reddy-5842a437b">Linkdin</a>
+      <a class='final-link' href="reddymokshith548@gmail.com">Connect.Email</a> 
+    </div>
+  </div>
+  <footer class=footer>
+    <span>© MOKII.DEV</span><span>BUILT ON MY OWN TERMS.</span>
+  </footer>
+</section>
+
+<script>
+var lenis = new Lenis({ duration: 1.25, smoothWheel: true, wheelMultiplier: 0.9, touchMultiplier: 1.2 });
+gsap.registerPlugin(ScrollTrigger);
+lenis.on("scroll", ScrollTrigger.update);
+gsap.ticker.add(t => lenis.raf(t * 1000));
+gsap.ticker.lagSmoothing(0);
+
+let cur = document.querySelector(".cursor");
+var mx = window.innerWidth / 2, my = window.innerHeight / 2, cx = mx, cy = my;
+window.addEventListener("mousemove", e => { mx = e.clientX; my = e.clientY });
+
+gsap.ticker.add(() => {
+    cx += (mx - cx) * 0.18; cy += (my - cy) * 0.18;
+    cur.style.left = cx + "px"; cur.style.top = cy + "px";
+});
+
+document.querySelectorAll("a, .project, .paper, .build-item, .status-card").forEach(el => {
+    el.onmouseenter = () => cur.classList.add("large");
+    el.onmouseleave = function() { cur.classList.remove("large") };
+});
+
+let pct = document.getElementById("loaderPercent"), line = document.querySelector(".loader-line-inner");
+let ltr = document.querySelectorAll(".loader-title span");
+var lTl = gsap.timeline();
+
+lTl.to(ltr, { y: "0%", duration: 1.2, stagger: .05, ease: "power4.out" })
+   .to({}, { duration: 1.1, onUpdate: function() {
+       let prg = Math.round(this.progress() * 100);
+       pct.textContent = String(prg).padStart(2, "0") + "%";
+       line.style.width = prg + "%";
+   }})
+   .to(".loader", { clipPath: "inset(0 0 100% 0)", duration: 1.2, ease: "power4.inOut", onComplete: () => document.querySelector(".loader").remove() });
+
+let hTl = gsap.timeline({ delay: 1.8 });
+hTl.to(".hero-kicker span", { y: 0, duration: 1, ease: "power4.out" })
+   .to(".hero-title-line", { y: 0, duration: 1.5, stagger: .12, ease: "power4.out" }, "-=.5")
+   .to(".hero-description", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=.7")
+   .to(".hero-scroll", { opacity: 1, duration: .8 }, "-=.6");
+
+gsap.to(".global-wallpaper", { 
+    yPercent: 15, 
+    ease: "none", 
+    scrollTrigger: { 
+        trigger: document.body, 
+        start: "top top", 
+        end: "bottom bottom", 
+        scrub: true 
+    }
+});
+
+gsap.to(".hero-content", 
+{ yPercent: -25, opacity: .15, ease: "none", scrollTrigger:
+{ trigger: ".hero", start: "top top", end: "bottom top", scrub: true }});
+
+gsap.from(".building-title", 
+{ y: 100, opacity: 0, duration: 1.2, ease: "power4.out", scrollTrigger: 
+{ trigger: ".building", start: "top 80%" }});
+
+gsap.to(".status-progress-inner", 
+{ width: "78%", duration: 2, ease: "power2.out", scrollTrigger: 
+{ trigger: ".status-card", start: "top 85%" }});
+
+gsap.utils.toArray(".build-item").forEach((it, i) => {
+    /* Changed start point to "top 95%" so it fires easily on short pages */
+    gsap.from(it, { y: 80, opacity: 0, duration: 1, delay: i * .1, ease: "power4.out", scrollTrigger: { trigger: it, start: "top 95%" }});
+});
+
+gsap.from(".final-title", { y: 130, opacity: 0, duration: 1.4, ease: "power4.out", scrollTrigger: { trigger: ".final", start: "top 90%" }});
+
+window.onload = function() { ScrollTrigger.refresh() };
+</script>
 </body>
 </html>
