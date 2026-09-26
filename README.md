@@ -21,8 +21,6 @@ An extreme expanding flex-gallery highlighting my passions for sim racing, Formu
 Projects:
 An immersive scroll reel showcasing my startup work, robotics builds, pitch competitions, and hackathons.
 
-Profile:
-[A direct link taking you to my Stardance developer profile.](https://stardance.hackclub.com/@IcedThrower_95/projects)
 
 Built with:
 
