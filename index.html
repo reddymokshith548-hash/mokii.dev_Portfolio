@@ -111,6 +111,7 @@
 </section>
 
 <script>
+
 var lenis = new Lenis({ duration: 1.25, smoothWheel: true, wheelMultiplier: 0.9, touchMultiplier: 1.2 });
 gsap.registerPlugin(ScrollTrigger);
 lenis.on("scroll", ScrollTrigger.update);
@@ -173,7 +174,6 @@ gsap.to(".status-progress-inner",
 { trigger: ".status-card", start: "top 85%" }});
 
 gsap.utils.toArray(".build-item").forEach((it, i) => {
-    /* Changed start point to "top 95%" so it fires easily on short pages */
     gsap.from(it, { y: 80, opacity: 0, duration: 1, delay: i * .1, ease: "power4.out", scrollTrigger: { trigger: it, start: "top 95%" }});
 });
 
